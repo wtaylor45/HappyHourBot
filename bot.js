@@ -2,6 +2,8 @@ var HTTPS = require('https');
 
 var botID = process.env.BOT_ID;
 
+var barList = ['arenas', 'santa fe', 'grain', 'iron hill', 'stone balloon', 'deer park', 'home grown', 'green turtle'];
+
 var command;
 
 function respond() {
@@ -50,8 +52,14 @@ function postMessage() {
     case "green turtle":
       botResponse = "9pm-1am";
       break;
+    case "help":
+      botResponse = "Usage: !happy hour <bar name>\n\nAvailable Bars:\n"
+      var i = 0;
+      for(i = 0;i<barList.length;i++){
+        botResponse += barList[i] + "\n";
+      }
     default:
-      botResponse = "No happy hour times found";
+      botResponse = "No happy hour times found!\nFor help use '!happy hour help'";
       break;
 
   }
