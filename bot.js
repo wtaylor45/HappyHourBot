@@ -25,7 +25,7 @@ function postMessage() {
   var botResponse, options, body, botReq;
   var bar;
 
-  bar = command.substring(12, command.length);
+  bar = command.substring(12, command.length-12);
 
   switch(bar.toLowerCase()){
     case "arenas":
@@ -60,7 +60,7 @@ function postMessage() {
       }
       break;
     default:
-      botResponse = "No happy hour times found!\nFor help use '!happy hour help'";
+      botResponse = "No happy hour times found for "+ bar +"!\nFor help use '!happy hour help'";
       break;
 
   }
