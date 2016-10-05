@@ -24,6 +24,7 @@ function postMessage() {
   var bar;
 
   bar = command.substring(4, command.length-4);
+  console.log(bar);
 
   switch(bar){
     case "arenas":
