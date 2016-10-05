@@ -25,13 +25,10 @@ function postMessage() {
   var botResponse, options, body, botReq;
   var bar;
 
-  if(command.lastIndexOf(" ")>11)
-    bar = command.substring(12, command.indexOf(" ", 13));
-  else {
-    bar = command.substring(12, command.length);
-  }
+  bar = command.substring(12, command.length);
 
-  switch(bar.toLowerCase()){
+
+  switch(bar.toLowerCase().trim()){
     case "arenas":
       botResponse = "3-6pm";
       break;
