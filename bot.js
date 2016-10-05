@@ -6,7 +6,7 @@ var command;
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-      botRegex = /\!happy hour (arenas|iron hill|stone ballon|santa fe|deer park|home grown|grain|green turtle)/i;
+      botRegex = /\!happy hour .*/i;
 
   if(request.text && botRegex.test(request.text)) {
     command = request.text;
