@@ -3,9 +3,11 @@ var cool = require('cool-ascii-faces');
 
 var botID = process.env.BOT_ID;
 
+var command;
+
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-      botRegex = new RegEx("/\?happy hour (arenas|grottos|kates)");
+      botRegex = /^\!happy hour arenas|grottos|kates|deer park|santa fe/
 
   if(request.text && botRegex.test(request.text)) {
     this.res.writeHead(200);
@@ -20,8 +22,9 @@ function respond() {
 
 function postMessage() {
   var botResponse, options, body, botReq;
+  var bar;
 
-  botResponse = "fuck you";
+  bar =
 
   options = {
     hostname: 'api.groupme.com',
