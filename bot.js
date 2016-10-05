@@ -2,7 +2,7 @@ var HTTPS = require('https');
 
 var botID = process.env.BOT_ID;
 
-var barList = ['<i>arenas</i>', 'santa fe', 'grain', 'iron hill', 'stone balloon', 'deer park', 'home grown', 'green turtle'];
+var barList = ['arenas', 'santa fe', 'grain', 'iron hill', 'stone balloon', 'deer park', 'home grown', 'green turtle'];
 
 var command;
 
