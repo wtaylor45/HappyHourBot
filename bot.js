@@ -25,7 +25,11 @@ function postMessage() {
   var botResponse, options, body, botReq;
   var bar;
 
-  bar = command.substring(12, command.lastIndexOf(" ", 13));
+  if(command.lastIndexOf(" ")>11)
+    bar = command.substring(12, command.indexOf(" ", 13));
+  else {
+    bar = command.substring(12, command.length);
+  }
 
   switch(bar.toLowerCase()){
     case "arenas":
