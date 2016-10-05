@@ -23,7 +23,7 @@ function postMessage() {
   var botResponse, options, body, botReq;
   var bar;
 
-  bar = command.substring(12, command.length-12);
+  bar = command.substring(12, command.length);
 
   switch(bar){
     case "arenas":
