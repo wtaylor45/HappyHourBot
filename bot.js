@@ -6,7 +6,7 @@ var command;
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-      botRegex = /\!happy hour arenas|iron hill|stone ballon|santa fe|deer park|home grown|grain|green turtle/i;
+      botRegex = /\!happy hour (arenas|iron hill|stone ballon|santa fe|deer park|home grown|grain|green turtle)/i;
 
   if(request.text && botRegex.test(request.text)) {
     command = request.text;
@@ -24,7 +24,6 @@ function postMessage() {
   var bar;
 
   bar = command.substring(4, command.length-4);
-  console.log(bar);
 
   switch(bar){
     case "arenas":
@@ -56,6 +55,8 @@ function postMessage() {
       break;
 
   }
+
+  botResponse += bar;
 
   options = {
     hostname: 'api.groupme.com',
