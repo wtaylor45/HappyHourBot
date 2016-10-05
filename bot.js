@@ -25,7 +25,7 @@ function postMessage() {
   var botResponse, options, body, botReq;
   var bar;
 
-  bar = command.substring(12, command.lastIndexOf(" ")-1);
+  bar = command.substring(12, command.lastIndexOf(" ", 12)-1);
 
   switch(bar.toLowerCase()){
     case "arenas":
