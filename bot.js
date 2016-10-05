@@ -25,7 +25,7 @@ function postMessage() {
 
   bar = command.substring(4, command.length-4);
 
-  switch(bar){
+  /*switch(bar){
     case "arenas":
       botResponse = "3-6pm";
       break;
@@ -54,9 +54,9 @@ function postMessage() {
       botResponse = "No happy hour times found for " + bar;
       break;
 
-  }
+  }*/
 
-  botResponse += bar;
+  botResponse = bar;
 
   options = {
     hostname: 'api.groupme.com',
