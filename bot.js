@@ -8,7 +8,7 @@ var command;
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-      botRegex = /^\!happy hour .*/i;
+      botRegex = /^\!happy hour \w*/i;
 
   if(request.text && botRegex.test(request.text)) {
     command = request.text;
@@ -27,7 +27,7 @@ function postMessage() {
 
   bar = command.substring(12, command.length);
 
-  switch(bar){
+  switch(bar.toLowerCase()){
     case "arenas":
       botResponse = "3-6pm";
       break;
