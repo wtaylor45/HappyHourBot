@@ -1,5 +1,4 @@
 var HTTPS = require('https');
-var cool = require('cool-ascii-faces');
 
 var botID = process.env.BOT_ID;
 
@@ -7,24 +6,55 @@ var command;
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-      botRegex = /^\!happy hour arenas|grottos|kates|deer park|santa fe/
+      botRegex = /^\!happy hour .*/;
 
   if(request.text && botRegex.test(request.text)) {
+    command = request.text;
     this.res.writeHead(200);
     postMessage();
     this.res.end();
   } else {
     console.log("don't care");
     this.res.writeHead(200);
-    this.res.end();
-  }
+    this.res.end();  }
 }
 
 function postMessage() {
   var botResponse, options, body, botReq;
   var bar;
 
-  bar =
+  bar = command.substring(4, command.length-4);
+
+  switch(bar){
+    case "arenas":
+      botResponse = "3-6pm";
+      break;
+    case "iron hill":
+      botResponse = "5-7pm";
+      break;
+    case "stone balloon":
+      botResponse = "3:30-6:30pm\n2-5pm weekends";
+      break;
+    case "santa fe":
+      botResponse = "4-7pm";
+      break;
+    case "deer park":
+      botResponse = "4-7pm";
+      break;
+    case "home grown":
+      botResponse = "5-7pm";
+      break;
+    case "grain":
+      botResponse = "3-6pm";
+      break;
+    case "green turtle":
+      botResponse = "9pm-1am";
+      break;
+    default:
+      botResponse = "No happy hour times found for " + bar;
+      break;
+
+  }
 
   options = {
     hostname: 'api.groupme.com',
