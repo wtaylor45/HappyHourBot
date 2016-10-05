@@ -58,6 +58,7 @@ function postMessage() {
       for(i = 0;i<barList.length;i++){
         botResponse += barList[i] + "\n";
       }
+      break;
     default:
       botResponse = "No happy hour times found!\nFor help use '!happy hour help'";
       break;
