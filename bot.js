@@ -51,7 +51,7 @@ function postMessage() {
       botResponse = "9pm-1am";
       break;
     default:
-      botResponse = "No happy hour times found for " + bar;
+      botResponse = "No happy hour times found";
       break;
 
   }
